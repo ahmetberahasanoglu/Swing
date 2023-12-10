@@ -1,3 +1,4 @@
+// Oyunlar incelemeler ve yazarlar için belirlenen typeları kullanarak kendimiz bir veritabanı olusturduk daha sonra bu değerleri export ettik
 let games = [
     {id: '1',title:'Zelda, Tears of the Kingdom', platform:['Switch']},
     {id: '2',title:'Final Fantasy 7 Remake', platform:['PS5','PC']},
