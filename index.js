@@ -1,10 +1,11 @@
+//Kodlarınn hepsini FreeCodeCamp.org'un GraphQL for beginners kursunu izlerken yazdığımdan oradan alıntıdır
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 
-//db
+//yazılan database'i import ettim 
 import _db from './_db.js';
 
-//tipler
+//tOyunlar, incelemeler, yazarlar vs. için tipleri importladım
 import { typeDefs } from './schema.js';
 
 const resolvers ={
