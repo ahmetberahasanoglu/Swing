@@ -1,3 +1,6 @@
+//Kullanacağımız tipleri tanımladık ! işareti yalnızca o tipten değer alır anlamındadır
+//title: String!  diyorsa title yalnızca String değer olur
+//platform: [String!]! ise platform, yalnızca String değerleri alabilen ve bir değeri olması zorunlu olan bir ifadedir
 export const typeDefs=`#graphql
 type Game{
     id: ID!
