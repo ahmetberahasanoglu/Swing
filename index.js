@@ -64,10 +64,10 @@ const resolvers ={//resolvers yani adresimize gönderdiğimizde yapacağımız �
     }
 }
 // server setup
-const server = new ApolloServer({
+const server = new ApolloServer({//apolloservera bağlandık ve tanımladıgımız typedefleri ve resolverları gönderdik
 typeDefs,resolvers 
 })
 const { url } = await startStandaloneServer(server,{
     listen:{ port:4000}
 })
-console.log('Server ready at port', 4000)
+console.log('Server ready at port', 4000)//servera bağlandıgında terminalde bu yazıyor
