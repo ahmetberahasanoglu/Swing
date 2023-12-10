@@ -8,8 +8,8 @@ import _db from './_db.js';
 //tOyunlar, incelemeler, yazarlar vs. için tipleri importladım
 import { typeDefs } from './schema.js';
 
-const resolvers ={
-    Query: {
+const resolvers ={//resolvers yani adresimize gönderdiğimizde yapacağımız çözümler/işlemleri belirledim
+    Query: {//Query olmazsa olmaz bir resolverdır çünkü tüm Graphql dosylaarında bulunur
        games(){
         return _db.games
        },
@@ -30,17 +30,17 @@ const resolvers ={
        }
        
     },
-    Game: {
+    Game: {//oyunları ayrı bir şekilde aldığımızda da resolver alacak 
         reviews(parent){
             return _db.reviews.filter((r)=> r.game_id === parent.id)
         }
     },
-    Author: {
+    Author: {//Yazarları ayrı bir şekilde aldığımızda da resolver alacak 
         reviews(parent){
             return _db.reviews.filter((r)=> r.author_id === parent.id)
         }
     },
-    Review:{
+    Review:{//İncelemeleri ayrı bir şekilde aldığımızda da resolver alacak 
         game(parent){
             return _db.games.find((g)=>g.id === parent.game_id) 
         },
@@ -48,7 +48,7 @@ const resolvers ={
             return _db.authors.find((a)=>a.id === parent.author_id) 
         }
     },
-    Mutation: {
+    Mutation: {//Mutation içinde oyunu sil ve oyunu ekle işlemlerimizi yazdık  
         deleteGame(_,args){
             _db.games =_db.games.filter((g) => g.id !== args.id)
             return _db.games
